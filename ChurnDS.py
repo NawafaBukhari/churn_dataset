@@ -60,3 +60,9 @@ plt.title("Age VS Estimated Salary")
 plt.xlabel("Age")
 plt.ylabel("Estimated Salary")
 # %%
+# Comparing the IsActiveMember and Exited Columns
+# What is the number of Non-Active Members to the members 
+# that have not exited the company? 
+activeExited = df.groupby(['IsActiveMember','Exited']).size().unstack()
+activeExited
+# %%
