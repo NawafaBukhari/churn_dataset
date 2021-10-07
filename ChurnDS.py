@@ -66,3 +66,10 @@ plt.ylabel("Estimated Salary")
 activeExited = df.groupby(['IsActiveMember','Exited']).size().unstack()
 activeExited
 # %%
+# Which gender is the most inactive?
+sns.displot(data=df, x="Gender", hue="IsActiveMember", multiple="stack")
+activeGender = df.groupby(['Gender','IsActiveMember']).size().unstack()
+activeGender['Inactive'] = activeGender[0]/activeGender[0].sum()*100
+activeGender
+
+# %%
